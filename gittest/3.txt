@@ -8,12 +8,6 @@ public class ReadFromFile {
             File file = new File("example.txt");
             Scanner scanner = new Scanner(file);
             System.out.println("File content:");
-             writeToFile("example.txt", "Hello, this is a dummy text file.\n");
-                    writeToFile("example.txt", "This file is created for demonstration purposes.\n");
-                    writeToFile("example.txt", "Feel free to modify or expand this file.\n");
-                    writeToFile("example.txt", "Here is an additional line of text.\n");
-
-                    System.out.println("File written successfully.");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 System.out.println(line);
