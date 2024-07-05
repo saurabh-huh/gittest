@@ -1,0 +1,18 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write("Hello, this is a dummy text file.\n");
+            writer.write("This file is created for demonstration purposes.\n");
+            writer.write("Feel free to modify or expand this file.\n");
+            writer.close();
+            System.out.println("File written successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
