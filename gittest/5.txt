@@ -1,0 +1,35 @@
+import java.util.HashMap;
+
+public class CharacterFrequency {
+
+    public static void main(String[] args) {
+        String str = "Hello, World!"; // Example string
+
+        // Calculate frequency of characters
+        HashMap<Character, Integer> frequencyMap = calculateCharacterFrequency(str);
+
+        // Print frequencies
+        System.out.println("Character frequencies in \"" + str + "\":");
+        for (Character key : frequencyMap.keySet()) {
+            System.out.println("'" + key + "': " + frequencyMap.get(key));
+        }
+    }
+
+    // Method to calculate frequency of characters in a string
+    public static HashMap<Character, Integer> calculateCharacterFrequency(String str) {
+        HashMap<Character, Integer> frequencyMap = new HashMap<>();
+
+        // Convert string to char array
+        char[] charArray = str.toCharArray();
+
+        // Iterate through each character
+        for (char c : charArray) {
+            if (Character.isLetterOrDigit(c)) { // Check if character is letter or digit
+                // Update frequency in map
+                frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+            }
+        }
+
+        return frequencyMap;
+    }
+}
